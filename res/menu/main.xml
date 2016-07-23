@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.hjf.r2000.MainActivity" >
+
+    <item
+        android:id="@+id/action_ip_address"
+        android:orderInCategory="100"
+        android:title="设置服务器IP地址"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/now_ip_address"
+        android:orderInCategory="100"
+        android:title="当前服务器IP地址"
+        app:showAsAction="always"/>
+
+</menu>

@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp" >
+
+        <!-- Read setting -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Read setting"
+            android:textColor="#550000"
+            android:textSize="25sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                style="@style/tvStyle1"
+                android:text="Mem:" />
+
+            <Spinner
+                android:id="@+id/spnMem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:spinnerMode="dropdown" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                style="@style/tvStyle1"
+                android:text="Start Address(word):" />
+
+            <EditText
+                android:id="@+id/etAddr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="number"
+                android:text="0" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                style="@style/tvStyle1"
+                android:text="Num of Data(word):" />
+
+            <EditText
+                android:id="@+id/etNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="number"
+                android:text="6" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="choice which voice for reading"
+            android:textSize="20sp" />
+
+        <RadioGroup
+            android:id="@+id/rgVoice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <RadioButton
+                android:id="@+id/rbSystem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="System" />
+
+            <RadioButton
+                android:id="@+id/rbCustom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Custom" />
+        </RadioGroup>
+
+        <!-- Reader setting -->
+
+        <Button
+            android:id="@+id/btnGetReaderInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Get ReaderInfo"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:id="@+id/llReaderSetting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Reader setting"
+                android:textColor="#550000"
+                android:textSize="25sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    style="@style/tvStyle1"
+                    android:text="version:" />
+
+                <TextView
+                    android:id="@+id/tvVersion"
+                    style="@style/tvStyle1" />
+            </LinearLayout>
+            <!-- baud -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    style="@style/tvStyle1"
+                    android:text="baud:" />
+
+                <TextView
+                    android:id="@+id/tvBaud"
+                    style="@style/tvStyle1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/tvBaudMin"
+                    style="@style/tvStyle2" />
+
+                <SeekBar
+                    android:id="@+id/sbBaud"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/tvBaudMax"
+                    style="@style/tvStyle2" />
+            </LinearLayout>
+
+            <!-- minFrequency -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    style="@style/tvStyle1"
+                    android:text="Min Frequency:" />
+
+                <TextView
+                    android:id="@+id/tvMinFre"
+                    style="@style/tvStyle1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/tvMinFreMin"
+                    style="@style/tvStyle2" />
+
+                <SeekBar
+                    android:id="@+id/sbMinFre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/tvMinFreMax"
+                    style="@style/tvStyle2" />
+            </LinearLayout>
+            <!-- maxFrequency -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    style="@style/tvStyle1"
+                    android:text="Max Frequency:" />
+
+                <TextView
+                    android:id="@+id/tvMaxFre"
+                    style="@style/tvStyle1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/tvMaxFreMin"
+                    style="@style/tvStyle2" />
+
+                <SeekBar
+                    android:id="@+id/sbMaxFre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/tvMaxFreMax"
+                    style="@style/tvStyle2" />
+            </LinearLayout>
+            <!-- RF Power -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    style="@style/tvStyle1"
+                    android:text="RF Power:" />
+
+                <TextView
+                    android:id="@+id/tvRfPower"
+                    style="@style/tvStyle1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/tvRfPowerMin"
+                    style="@style/tvStyle2" />
+
+                <SeekBar
+                    android:id="@+id/sbRfPower"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/tvRfPowerMax"
+                    style="@style/tvStyle2" />
+            </LinearLayout>
+            <!-- Inventory Scan Time -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    style="@style/tvStyle1"
+                    android:text="Inventory Scan Time:" />
+
+                <TextView
+                    android:id="@+id/tvScanTime"
+                    style="@style/tvStyle1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/tvScanTimeMin"
+                    style="@style/tvStyle2" />
+
+                <SeekBar
+                    android:id="@+id/sbScanTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/tvScanTimeMax"
+                    style="@style/tvStyle2" />
+            </LinearLayout>
+
+            </LinearLayout>
+            <TextView
+                android:id="@+id/tvInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="#FF0000"
+                android:textSize="20sp" />
+        
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <ProgressBar
+                    android:id="@+id/pbUpdate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_centerInParent="true"
+                    android:visibility="invisible" />
+
+                <Button
+                    android:id="@+id/btnUpdate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Update"
+                    android:textSize="20sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <ProgressBar
+                    android:id="@+id/pbDefault"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_centerInParent="true"
+                    android:visibility="invisible" />
+
+                <Button
+                    android:id="@+id/btnDefault"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Restore Default"
+                    android:textSize="20sp" />
+            </RelativeLayout>
+            <Button
+                    android:id="@+id/btn_ip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="设置IP" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

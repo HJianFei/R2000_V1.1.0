@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.hjf.r2000"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.hjf.uhf_r2000.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.hjf.r2000.TestActivity"
+            android:label="@string/title_activity_test" >
+        </activity>
+        <activity
+            android:name="com.hjf.r2000.SetIPActivity"
+            android:label="@string/title_activity_set_ip" >
+        </activity>
+        <activity
+            android:name="com.hjf.uhf_r2000.SettingActivity"
+            android:label="@string/title_activity_setting" >
+        </activity>
+        <activity
+            android:name="com.hjf.uhf_r2000.CheckActivity"
+            android:label="@string/title_activity_check" >
+        </activity>
+        <activity
+            android:name="com.hjf.uhf_r2000.InActivity"
+            android:label="@string/title_activity_in" >
+        </activity>
+        <activity
+            android:name="com.hjf.uhf_r2000.OutActivity"
+            android:label="@string/title_activity_out" >
+        </activity>
+        <activity
+            android:name="com.hjf.uhf_r2000.CheckActivity"
+            android:label="@string/title_activity_check" >
+        </activity>
+        <activity
+            android:name="com.hjf.uhf_r2000.CheckActivity"
+            android:label="@string/title_activity_check" >
+        </activity>
+    </application>
+
+</manifest>
