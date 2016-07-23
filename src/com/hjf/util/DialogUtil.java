@@ -12,22 +12,26 @@ import android.os.Handler;
 
 import com.hjf.r2000.R;
 import com.hjf.uhf_r2000.model.PojoCard;
+
 /**
  * 对话框
+ * 
  * @author Administrator
- *
+ * 
  */
 public class DialogUtil {
 	private Context mContext;
 	private List<PojoCard> mArrCard;
 	private Handler mHandler;
+	private String flag;
 
 	public DialogUtil(Context mContext, List<PojoCard> mArrCard,
-			Handler mHandler) {
+			Handler mHandler, String flag) {
 		super();
 		this.mContext = mContext;
 		this.mArrCard = mArrCard;
 		this.mHandler = mHandler;
+		this.flag = flag;
 	}
 
 	public void dialog() {
@@ -43,9 +47,9 @@ public class DialogUtil {
 			public void onClick(DialogInterface dialog, int which) {
 				ProgressDialog progressDialog = progressDialog();
 				progressDialog.show();
-				//启动转码线程进行转码
+				// 启动转码线程进行转码
 				EPC_BarCodeUtil mBarCodeUtil = new EPC_BarCodeUtil(mContext,
-						mArrCard, mHandler, progressDialog);
+						mArrCard, mHandler, progressDialog,flag);
 				mBarCodeUtil.getEpc2carcode();
 			}
 		});

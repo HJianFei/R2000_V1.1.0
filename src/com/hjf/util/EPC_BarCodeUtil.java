@@ -17,14 +17,16 @@ public class EPC_BarCodeUtil {
 	private Handler mHandler;
 	private ProgressDialog mDialog;
 	private Context mContext;
+	private String flag;
 
 	public EPC_BarCodeUtil(Context mContext, List<PojoCard> mPojoCard,
-			Handler mHandler, ProgressDialog mDialog) {
+			Handler mHandler, ProgressDialog mDialog, String flag) {
 
 		this.mPojoCard = mPojoCard;
 		this.mHandler = mHandler;
 		this.mDialog = mDialog;
 		this.mContext = mContext;
+		this.flag = flag;
 		mEPC2BarCode = new ArrayList<EPC2BarCode>();
 	}
 
@@ -211,7 +213,7 @@ public class EPC_BarCodeUtil {
 				}
 				// for循环结束 启动线程，进行数据插入操作
 				DBUtil dbUtil = new DBUtil(mContext, mEPC2BarCode, mHandler,
-						mDialog);
+						mDialog,flag);
 				// 连接数据库，插入数据
 				dbUtil.getConnection();
 

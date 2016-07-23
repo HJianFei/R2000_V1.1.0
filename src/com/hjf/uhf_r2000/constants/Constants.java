@@ -13,5 +13,11 @@ public class Constants {
 	public static String DB_ADDRESS = "db_address";
 	// 默认数据库IP地址
 	public static String DEFAULT_DB_ADDRESS = "192.168.1.108";
+	// 入库标志
+	public static String IN_REPOSITORY = "IN";
+	// 出库标志
+	public static String OUT_REPOSITORY = "OUT";
+	// 盘点标志
+	public static String CHECK_REPOSITORY = "CHECK";
 
 }

@@ -16,10 +16,12 @@ import com.hjf.uhf_r2000.constants.Constants;
 import com.hjf.uhf_r2000.model.EPC2BarCode;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
+
 /**
  * 数据库连接类
+ * 
  * @author Administrator
- *
+ * 
  */
 public class DBUtil {
 	private List<EPC2BarCode> mEPCcode;
@@ -28,18 +30,21 @@ public class DBUtil {
 	private ProgressDialog mDialog;
 	private String sql;
 	private Context mContext;
+	private String flag;
 	private String db_Address = "jdbc:mysql://" + Constants.DEFAULT_DB_ADDRESS
 			+ ":3306/epcdb";
+	private String prefix;
 
 	public DBUtil(Context mContext, List<EPC2BarCode> mEPCcode,
-			Handler mHandler, ProgressDialog mDialog) {
+			Handler mHandler, ProgressDialog mDialog, String flag) {
 		super();
 		this.mEPCcode = mEPCcode;
 		this.mHandler = mHandler;
 		this.mDialog = mDialog;
 		this.mContext = mContext;
+		this.flag = flag;
 
-	} 
+	}
 
 	// 拿到数据库连接的对象
 	public void getConnection() {
@@ -83,7 +88,14 @@ public class DBUtil {
 	public void insert(Connection conn) {
 
 		// sql前缀
-		String prefix = "INSERT INTO sto_tmp_check_repository (epc,timestamp,barcode,serial) VALUES ";
+		if (Constants.CHECK_REPOSITORY.equals(flag)) {
+			prefix = "INSERT INTO sto_tmp_check_repository (epc,timestamp,barcode,serial) VALUES ";
+		} else if (Constants.IN_REPOSITORY.equals(flag)) {
+			prefix = "INSERT INTO sto_tmp_in_repository (epc,timestamp,barcode,serial) VALUES ";
+		} else if (Constants.OUT_REPOSITORY.equals(flag)) {
+			prefix = "INSERT INTO sto_tmp_out_repository (epc,timestamp,barcode,serial) VALUES ";
+		}
+//		System.out.println(prefix);
 		try {
 			// 保存sql后缀
 			StringBuffer suffix = new StringBuffer();

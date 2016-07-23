@@ -8,7 +8,7 @@
     <string name="title_activity_set_ip">设置服务器IP地址</string>
     <string name="title_activity_setting">SettingActivity</string>
     <string name="title_activity_check">盘点操作</string>
-    <string name="title_activity_in">InActivity</string>
-    <string name="title_activity_out">OutActivity</string>
+    <string name="title_activity_in">入库操作</string>
+    <string name="title_activity_out">出库操作</string>
 
 </resources>

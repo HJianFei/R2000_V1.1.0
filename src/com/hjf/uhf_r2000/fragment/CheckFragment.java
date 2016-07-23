@@ -23,6 +23,7 @@ import android.widget.Toast;
 
 import com.hjf.r2000.R;
 import com.hjf.uhf_r2000.adapter.ContentAdapter;
+import com.hjf.uhf_r2000.constants.Constants;
 import com.hjf.uhf_r2000.hardware.assist.UhfReadListener;
 import com.hjf.uhf_r2000.hardware.assist.UhfSharedPreferenceUtil;
 import com.hjf.uhf_r2000.hardware.function.UhfRead;
@@ -159,14 +160,14 @@ public class CheckFragment extends Fragment {
 				String text = mBtnScan.getText().toString().trim();
 				if (text.equalsIgnoreCase("Scan")) {
 					mBtnScan.setText("Stop");
-					 // 测试数据
-					 PojoCard pojoCard;
-					 for (int i = 0; i < 10; i++) {
-					 pojoCard = new PojoCard();
-					 pojoCard.setContent("3072c9f693ce3f2007b1d0cb");
-					 pojoCard.setCount(2);
-					 mArrCard.add(pojoCard);
-					 }
+//					 // 测试数据
+//					 PojoCard pojoCard;
+//					 for (int i = 0; i < 10; i++) {
+//					 pojoCard = new PojoCard();
+//					 pojoCard.setContent("3072c9f693ce3f2007b1d0cb");
+//					 pojoCard.setCount(2);
+//					 mArrCard.add(pojoCard);
+//					 }
 
 					if (!isStart) {
 						mUhfRead.start();
@@ -179,7 +180,7 @@ public class CheckFragment extends Fragment {
 					mUhfRead.pause();
 					if (mArrCard.size() > 0) {
 						DialogUtil dialog = new DialogUtil(mCtx, mArrCard,
-								mHandler);
+								mHandler,Constants.CHECK_REPOSITORY);
 						// 弹出提示对话框
 						dialog.dialog();
 					}
